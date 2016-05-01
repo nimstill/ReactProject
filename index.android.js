@@ -19,13 +19,13 @@ var BASE_URL = "https://api.github.com/search/repositories?q=";
 
 
 class ReactProject extends Component {
-  getInitialState: function() {
+  getInitialState() {
         return {
           dataSource: new ListView.DataSource({
             rowHasChanged: (row1, row2) => row1 !== row2,
           }),
         };
-      },
+      }
 
 
 
