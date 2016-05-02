@@ -19,12 +19,12 @@ var BASE_URL = "https://api.github.com/search/repositories?q=";
 
 
 class ReactProject extends Component {
-  getInitialState() {
-        return {
+  state = {
+
           dataSource: new ListView.DataSource({
             rowHasChanged: (row1, row2) => row1 !== row2,
           }),
-        };
+
       }
 
 
@@ -32,9 +32,9 @@ class ReactProject extends Component {
 
 
   render() {
-//    if (this.state.dataSource.getRowCount() === 0) {
-//      console.log("yes");
-//    }
+    if (this.state.dataSource.getRowCount() === 0) {
+      console.log("yes");
+    }
     var content = this.state.dataSource.getRowCount() === 0 ?
     <Text style={styles.blanktext}>
       please enter a search term to seee results.
