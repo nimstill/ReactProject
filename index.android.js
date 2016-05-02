@@ -32,9 +32,9 @@ class ReactProject extends Component {
 
 
   render() {
-    if (this.state.dataSource.getRowCount() === 0) {
-      console.log("yes");
-    }
+//    if (this.state.dataSource.getRowCount() === 0) {
+//      console.log("yes");
+//    }
     var content = this.state.dataSource.getRowCount() === 0 ?
     <Text style={styles.blanktext}>
       please enter a search term to seee results.
@@ -61,9 +61,9 @@ class ReactProject extends Component {
         </View>
           
       );
-  },
+  }
 
-  onSearchChange: function(event: Object) {
+  onSearchChange(event: Object) {
     var searchTerm = event.nativeEvent.text.toLowerCase();
     var queryURL = BASE_URL + encodeURIComponent(searchTerm);
     fetch(queryURL)
@@ -76,9 +76,9 @@ class ReactProject extends Component {
           });
         }
       }).done();
-  },
+  }
 
-  renderRow: function(repo: Object) {
+  renderRow(repo: Object) {
     return (
       <View>
         <View style = {styles.row}>
@@ -94,7 +94,7 @@ class ReactProject extends Component {
         <View style={styles.cellBoorder} />
       </View>
       );
-  },
+  }
 };
 
 
@@ -125,21 +125,21 @@ var styles = StyleSheet.create({
     width: 50,
     height: 50,
   },
-  title： {
-    fontSize： 20，
-    marginBotton: 8,
+  title: {
+    fontSize: 20,
+    marginBottom: 8,
     fontWeight: 'bold'
   },
   subtitle: {
-    fontSize：16,
-    marginBotton: 8,
+    fontSize: 16,
+    marginBottom: 8,
   },
   textContainer: {
     paddingLeft: 10,
   },
   blanktext: {
     padding: 10,
-    fontSize：20,
+    fontSize: 20,
   }
 });
 
