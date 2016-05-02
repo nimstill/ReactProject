@@ -91,7 +91,7 @@ class ReactProject extends Component {
             <Text style={styles.subtitle}>{repo.owner.login}</Text>
           </View>
         </View>
-        <View style={styles.cellBoorder} />
+        <View style={styles.cellBorder} />
       </View>
       );
   }
