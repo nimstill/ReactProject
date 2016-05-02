@@ -37,7 +37,7 @@ class ReactProject extends Component {
     }
     var content = this.state.dataSource.getRowCount() === 0 ?
     <Text style={styles.blanktext}>
-      please enter a search term to seee results.
+      please enter a search term to see results.
     </Text> :
     <ListView
       ref="listview"
@@ -72,7 +72,7 @@ class ReactProject extends Component {
         if (responseData.items) {
           this.setState({
             dataSource: this.state.dataSource.
-              cloneWithRows(reaponseData.items),
+              cloneWithRows(responseData.items),
           });
         }
       }).done();
