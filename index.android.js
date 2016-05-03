@@ -55,7 +55,7 @@ class ReactProject extends Component {
           autoCorrect={false}
           placeholder="Search for a project..."
           style={styles.searchBarInput}
-          onEndEditing={this.onSearchChange}
+          onSubmitEditing={this.onSearchChange}
           />
           {content}
         </View>
