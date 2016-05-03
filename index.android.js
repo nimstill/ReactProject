@@ -66,7 +66,15 @@ class ReactProject extends Component {
   onSearchChange(event: Object) {
     var searchTerm = event.nativeEvent.text.toLowerCase();
     var queryURL = BASE_URL + encodeURIComponent(searchTerm);
-    fetch(queryURL)
+      fetch(queryURL,{
+        method : 'GET',
+        headers : {
+          'Accept' : 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;',
+          'Content-Type' : 'text/plain;charset=UTF-8',
+          'User-Agent' : 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36',
+          //'Host' : 'domain.xx.com',
+      }
+    })
       .then((response) => response.json())
       .then((responseData) => {
         if (responseData.items) {
@@ -134,7 +142,7 @@ var styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 8,
   },
-  textContainer: {
+  textcontainer: {
     paddingLeft: 10,
   },
   blanktext: {
